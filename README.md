@@ -1,7 +1,7 @@
 # Installation
 
 First install dependencies:
-### npm install
+### 'npm install'
 
 # Getting Started with Create React App
 
