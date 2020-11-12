@@ -1,7 +1,7 @@
 .App {
   text-align: center;
 }
-
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +35,30 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+.frame{
+  position: relative;
+  margin-top: 5rem;
+  width: 960px;
+  height: 540px;
+}
+.surv{
+  bottom: 0;
+  opacity: 70%;
+  position: absolute;
+}
+
+.vid{
+  position: absolute;
+  bottom: 0;
+
+}
+/* .bor{
+  border: 2px solid black;
+} */
+.comp{
+  background-color: white;
+  opacity: 1;
 }
