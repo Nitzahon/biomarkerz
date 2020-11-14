@@ -9,6 +9,7 @@ function App() {
   return (
     <div className="App row justify-content-md-center">
       <Frame />
+
     </div>
   );
 }

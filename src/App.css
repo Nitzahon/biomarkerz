@@ -36,14 +36,16 @@
     transform: rotate(360deg);
   }
 } */
+body{
+  overflow: auto;
+}
 
-
-.frame{
+ .frame{
   position: relative;
   margin-top: 5rem;
   width: 960px;
   height: 540px;
-}
+} 
 .surv{
   bottom: 0;
   opacity: 70%;
@@ -62,3 +64,7 @@
   background-color: white;
   opacity: 1;
 }
+/* html body h1, html body h2, html body h3, html body h4, html body h5, html body h6, html body .h1, html body .h2, html body .h3, html body .h4, html body .h5, html body .h6 {
+  font-family: "Segoe UI",Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;
+} */
+
