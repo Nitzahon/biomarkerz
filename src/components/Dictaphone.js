@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react'
+import React, { Component } from 'react'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 
 const Dictaphone = () => {
@@ -7,7 +7,7 @@ const Dictaphone = () => {
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return null
   }else{
-    SpeechRecognition.startListening();
+    SpeechRecognition.startListening({continuous:true, language: 'he'});
   }
 
 
