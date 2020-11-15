@@ -37,18 +37,21 @@ export default class Frame extends Component {
                             // height={360}
                         />
                         
-                        {/* <ReactMic
-                            record={this.state.record}
-                            className="sound-wave"
-                            onStop={this.onStop}
-                            onData={this.onData}
-                            strokeColor="#FFFFFF"
-                            backgroundColor="#000000" /> */}
+
                     </div>
                     <div className="surv">
                         <SurveyComp />
                     </div>
     
+                </div>
+                <div>
+                <ReactMic   
+                            record={this.state.record}
+                            className="sound-wave"
+                            onStop={this.onStop}
+                            onData={this.onData}
+                            strokeColor="#FFFFFF"
+                            backgroundColor="#000000" />
                 </div>
                 <div className="dict">
                     <Dictaphone/>
