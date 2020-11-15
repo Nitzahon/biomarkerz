@@ -47,15 +47,20 @@ body{
   height: 540px;
 } 
 .surv{
-  bottom: 0;
+  bottom: 1rem;
   opacity: 70%;
   position: absolute;
 }
 
 .vid{
   position: absolute;
-  bottom: 0;
+  bottom: 1rem;
 
+}
+.dict{
+  position: relative;
+  top:0;
+  display: block;
 }
 /* .bor{
   border: 2px solid black;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {ReactMic} from "react-mic";
 import Webcam from "react-webcam";
 import SurveyComp from "./SurveyComp";
+import Dictaphone from "./Dictaphone"
 export default class Frame extends Component {
     constructor(props) {
         super(props)
@@ -26,24 +27,31 @@ export default class Frame extends Component {
             facingMode: "user"
         };
         return (
-            <div className="frame row justify-content-md-center">
-                <div className="vid">
-                    <Webcam id="videmo"
-                        audio={false}
-                        videoConstraints={videoConstraints}
-                        width={640}
-                        height={360}
-                    />
-                    <ReactMic
-                        record={this.state.record}
-                        className="sound-wave"
-                        onStop={this.onStop}
-                        onData={this.onData}
-                        strokeColor="#FFFFFF"
-                        backgroundColor="#000000" />
+            <div>
+                <div className="frame row justify-content-md-center">
+                    <div className="vid">
+                        <Webcam id="videmo"
+                            audio={false}
+                            videoConstraints={videoConstraints}
+                            // width={640}
+                            // height={360}
+                        />
+                        
+                        {/* <ReactMic
+                            record={this.state.record}
+                            className="sound-wave"
+                            onStop={this.onStop}
+                            onData={this.onData}
+                            strokeColor="#FFFFFF"
+                            backgroundColor="#000000" /> */}
+                    </div>
+                    <div className="surv">
+                        <SurveyComp />
+                    </div>
+    
                 </div>
-                <div className="surv">
-                    <SurveyComp />
+                <div className="dict">
+                    <Dictaphone/>
                 </div>
             </div>
         )
