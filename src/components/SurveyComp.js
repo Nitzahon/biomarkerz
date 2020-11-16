@@ -28,7 +28,7 @@ export default class SurveyComp extends Component {
         showQuestionNumbers: "off",
         pagePrevText: "Back",
         pageNextText: "Next",
-      },
+      }
     };
     // this.sendDataToServer = this.sendDataToServer.bind(this)
   }
