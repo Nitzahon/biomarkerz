@@ -13,7 +13,7 @@
     "react-mic": "^12.4.6",
     "react-scripts": "4.0.0",
     "react-speech-recognition": "^3.3.0",
-    "react-webcam": "^5.2.1",
+    "react-webcam-onfido": "^0.1.23",
     "survey-react": "^1.8.13",
     "web-vitals": "^0.2.4"
   },
