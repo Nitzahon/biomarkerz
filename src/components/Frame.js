@@ -3,6 +3,7 @@ import {ReactMic} from "react-mic";
 import Webcam from "react-webcam";
 import SurveyComp from "./SurveyComp";
 import Dictaphone from "./Dictaphone"
+import WebcamStreamCapture from './WebcamStreamCapture';
 export default class Frame extends Component {
     constructor(props) {
         super(props)
@@ -19,6 +20,7 @@ export default class Frame extends Component {
         this.toggleClass();
 
      }
+     
      onStop(recordedBlob) {
         console.log('recordedBlob is: ', recordedBlob);
       }
@@ -29,6 +31,7 @@ export default class Frame extends Component {
         const currentState = this.state.record;
         this.setState({ record: !currentState });
     };
+    
     render() {
 
         const videoConstraints = {
@@ -43,10 +46,11 @@ export default class Frame extends Component {
                         <Webcam id="videmo"
                             audio={false}
                             videoConstraints={videoConstraints}
-                            // width={640}
-                            // height={360}
+                            width={640}
+                            height={360}
                             
                         />
+
                         
 
                     </div>
@@ -69,6 +73,7 @@ export default class Frame extends Component {
                 <div className="dict">
                     <Dictaphone/>
                 </div>
+                <WebcamStreamCapture/>
             </div>
         )
     }
