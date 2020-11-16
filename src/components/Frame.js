@@ -8,8 +8,12 @@ export default class Frame extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            record:false
+            record:false,
+            transcript:null
         }
+    }
+    setAsyncState = (newState) =>{
+    new Promise((resolve) => this.setState(newState, resolve));
     }
     componentDidMount() {
         var video = document.querySelector('video');
@@ -20,7 +24,18 @@ export default class Frame extends Component {
         this.toggleClass();
 
      }
-     
+     sendTrans=(transcript)=>{
+         this.setState({transcript:transcript});
+         alert("transcript is "+transcript);
+         //after the transcript is reset, double toggle React mic to reset recorded blob
+         const currentState = this.state.record;
+         this.setState({
+            record: !currentState 
+        }, () => {
+            this.toggleClass();//finished
+        });
+
+     }
      onStop(recordedBlob) {
         console.log('recordedBlob is: ', recordedBlob);
       }
@@ -33,7 +48,6 @@ export default class Frame extends Component {
     };
     
     render() {
-
         const videoConstraints = {
             width: { max: 1280 },
             height: { max: 720 },
@@ -46,8 +60,8 @@ export default class Frame extends Component {
                         <Webcam id="videmo"
                             audio={false}
                             videoConstraints={videoConstraints}
-                            width={640}
-                            height={360}
+                            // width={640}
+                            // height={360}
                             
                         />
 
@@ -62,7 +76,7 @@ export default class Frame extends Component {
                 <div onClick={this.toggleClass}>
                 <ReactMic   
                             record={this.state.record}
-                            visualSetting="frequencyBars"
+                            visualSetting="none"
                             className="sound-wave"
                             onStop={this.onStop}
                             onData={this.onData}
@@ -71,9 +85,9 @@ export default class Frame extends Component {
                             />
                 </div>
                 <div className="dict">
-                    <Dictaphone/>
+                    {/* <Dictaphone dataTrans= {this.sendTrans.bind(this)} /> */}
                 </div>
-                <WebcamStreamCapture/>
+                {/* <WebcamStreamCapture/> */}
             </div>
         )
     }
