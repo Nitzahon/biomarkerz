@@ -7,7 +7,10 @@ const Dictaphone = () => {
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return null
   }else{
-    SpeechRecognition.startListening({continuous:true, language: 'he'});
+    SpeechRecognition.startListening({
+      continuous:true, 
+      // language: 'he'
+    });
   }
 
 

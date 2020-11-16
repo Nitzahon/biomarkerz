@@ -16,9 +16,19 @@ export default class Frame extends Component {
             console.log(video.videoWidth, video.videoHeight)
 
         });
-        this.setState({record:true});
+        this.toggleClass();
 
      }
+     onStop(recordedBlob) {
+        console.log('recordedBlob is: ', recordedBlob);
+      }
+     onData(recordedBlob) {
+        console.log('chunk of real-time data is: ', recordedBlob);
+      }
+      toggleClass=()=> {
+        const currentState = this.state.record;
+        this.setState({ record: !currentState });
+    };
     render() {
 
         const videoConstraints = {
@@ -35,6 +45,7 @@ export default class Frame extends Component {
                             videoConstraints={videoConstraints}
                             // width={640}
                             // height={360}
+                            
                         />
                         
 
@@ -44,14 +55,16 @@ export default class Frame extends Component {
                     </div>
     
                 </div>
-                <div>
+                <div onClick={this.toggleClass}>
                 <ReactMic   
                             record={this.state.record}
+                            visualSetting="frequencyBars"
                             className="sound-wave"
                             onStop={this.onStop}
                             onData={this.onData}
-                            strokeColor="#FFFFFF"
-                            backgroundColor="#000000" />
+                            strokeColor="#FF0000"
+                            // backgroundColor="#000000" 
+                            />
                 </div>
                 <div className="dict">
                     <Dictaphone/>
